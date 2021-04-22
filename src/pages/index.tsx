@@ -1,5 +1,17 @@
 import { LockIcon, ViewIcon } from '@chakra-ui/icons';
-import { Avatar, Button, Center, Flex, HStack, Link as ChakraLink, List, ListIcon, ListItem, Text, VStack } from '@chakra-ui/react';
+import {
+  Avatar,
+  Button,
+  Center,
+  Flex,
+  HStack,
+  Link as ChakraLink,
+  List,
+  ListIcon,
+  ListItem,
+  Text,
+  VStack,
+} from '@chakra-ui/react';
 import { signIn, signOut, useSession } from 'next-auth/client';
 import { useRouter } from 'next/dist/client/router';
 import { useEffect } from 'react';
@@ -30,8 +42,14 @@ const Index = () => {
         )} */}
 
         <VStack maxW="60%" alignSelf="center">
-          <Text>Below you'll find two links; one which takes you to a protected our and the other which is a publicly available route</Text>
-          <Text>The private route will query data from a database, where as the public will simply mock a query from a json file</Text>
+          <Text>
+            Below you'll find two links; one which takes you to a protected our and the other which is a publicly
+            available route
+          </Text>
+          <Text>
+            The private route will query data from a database, where as the public will simply mock a query from a json
+            file
+          </Text>
         </VStack>
         <Center>
           <List spacing={3} my={0}>
