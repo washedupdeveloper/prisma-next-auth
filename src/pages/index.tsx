@@ -29,12 +29,10 @@ const Index = () => {
           </Center>
         )} */}
 
-        <Text maxW="60%" alignSelf="center">
-          Below you'll find two links; one which takes you to a protected our and the other which is a publicly available route
-        </Text>
-        <Text maxW="60%" alignSelf="center">
-          The private route will query data from a database, where as the public will simply mock a query from a json file
-        </Text>
+        <VStack maxW="60%" alignSelf="center">
+          <Text>Below you'll find two links; one which takes you to a protected our and the other which is a publicly available route</Text>
+          <Text>The private route will query data from a database, where as the public will simply mock a query from a json file</Text>
+        </VStack>
         <Center>
           <List spacing={3} my={0}>
             <ListItem>
