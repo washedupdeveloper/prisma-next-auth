@@ -1,50 +1,55 @@
 import db from '../utils/db';
 
-const { user } = db;
+const { post } = db;
 
 const seed = async () => {
-  await user.upsert({
+  await post.upsert({
     where: { id: 1 },
     update: {},
     create: {
-      posts: {
-        create: [
-          {
-            title: 'Amazing',
-            content: "I'm on a seafood diet. I see food and I eat it.",
-            published: true,
-          },
-          {
-            title: 'Great',
-            content: 'Why did the scarecrow win an award? Because he was outstanding in his field.',
-            published: true,
-          },
-          {
-            title: 'Cool',
-            content: 'I made a pencil with two erasers. It was pointless.',
-            published: true,
-          },
-          {
-            title: 'Soon',
-            content: "I've got a great joke about construction, but I'm still working on it.",
-            published: true,
-          },
-        ],
-      },
+      title: 'Amazing',
+      content: "I'm on a seafood diet. I see food and I eat it.",
+      published: true,
     },
   });
 
-  await user.upsert({
+  await post.upsert({
     where: { id: 2 },
     update: {},
     create: {
-      posts: {
-        create: {
-          title: 'Lorem ipsum dolor sit amet.',
-          content: 'Ut sem metus, auctor tincidunt elementum',
-          published: true,
-        },
-      },
+      title: 'Great',
+      content: 'Why did the scarecrow win an award? Because he was outstanding in his field.',
+      published: false,
+    },
+  });
+
+  await post.upsert({
+    where: { id: 3 },
+    update: {},
+    create: {
+      title: 'Cool',
+      content: 'I made a pencil with two erasers. It was pointless.',
+      published: true,
+    },
+  });
+
+  await post.upsert({
+    where: { id: 4 },
+    update: {},
+    create: {
+      title: 'Soon',
+      content: "I've got a great joke about construction, but I'm still working on it.",
+      published: true,
+    },
+  });
+
+  await post.upsert({
+    where: { id: 5 },
+    update: {},
+    create: {
+      title: 'Lorem ipsum dolor sit amet.',
+      content: 'Ut sem metus, auctor tincidunt elementum',
+      published: true,
     },
   });
 };
@@ -57,5 +62,3 @@ seed()
   .finally(async () => {
     await db.$disconnect();
   });
-
-export default {};

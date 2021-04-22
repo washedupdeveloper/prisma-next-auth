@@ -15,7 +15,7 @@ model Post {
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
   published Boolean  @default(false)
-  author    User?    @relation(fields: [userId], references: [id])
+  // author    User?    @relation(fields: [userId], references: [id])
 
   @@map("posts")
 }
@@ -57,7 +57,7 @@ model User {
   image         String?
   createdAt     DateTime  @default(now()) @map(name: "created_at")
   updatedAt     DateTime  @default(now()) @map(name: "updated_at")
-  posts         Post[]
+  // posts         Post[]
   @@map(name: "users")
 }
 
