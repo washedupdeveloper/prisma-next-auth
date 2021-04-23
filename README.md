@@ -21,6 +21,8 @@ or if you use yarn
 yarn
 ```
 
+> remember to look at the .env.example file and adding the relevant information. For making it secret, rename it to .env
+
 **Step 2**
 
 run the command:
